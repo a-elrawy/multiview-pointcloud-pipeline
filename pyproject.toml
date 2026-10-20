@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multiview-pointcloud-pipeline"
+version = "0.1.0"
+authors = [
+    { name = "Abdelrhman Elrawy", email = "abdelrhman.elrawy1@gmail.com" }
+]
+description = "Modular multi-view point cloud processing, robust registration, and 3D surface reconstruction pipeline."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "numpy>=1.23.0",
+    "scipy>=1.9.0",
+    "open3d>=0.17.0",
+    "torch>=2.0.0",
+    "PyYAML>=6.0",
+    "tqdm>=4.65.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/a-elrawy/multiview-pointcloud-pipeline"
+"Bug Tracker" = "https://github.com/a-elrawy/multiview-pointcloud-pipeline/issues"

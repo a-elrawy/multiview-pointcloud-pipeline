@@ -1,0 +1,47 @@
+# Pipeline Configuration
+preprocessing:
+  voxel_size: 0.02
+  sor:
+    enabled: true
+    nb_neighbors: 20
+    std_ratio: 2.0
+  ror:
+    enabled: false
+    nb_points: 16
+    radius: 0.05
+  normal_estimation:
+    radius: 0.05
+    max_nn: 30
+
+registration:
+  method: "point_to_plane" # "point_to_point" or "point_to_plane"
+  voxel_size: 0.02
+  fpfh:
+    radius_feature: 0.10
+    max_nn: 100
+  global_ransac:
+    distance_threshold: 0.03
+    max_iterations: 100000
+    confidence: 0.999
+  icp:
+    max_correspondence_distance: 0.03
+    max_iteration: 50
+    relative_fitness: 1e-6
+    relative_rmse: 1e-6
+
+reconstruction:
+  method: "poisson" # "poisson" or "bpa"
+  poisson:
+    depth: 9
+    width: 0.0
+    scale: 1.1
+    linear_fit: false
+    trim_density_quantile: 0.05
+  bpa:
+    radii_factors: [1.0, 2.0, 4.0]
+
+mesh_postprocessing:
+  remove_unreferenced_vertices: true
+  remove_degenerate_triangles: true
+  remove_non_manifold_edges: true
+  smooth_iterations: 1
